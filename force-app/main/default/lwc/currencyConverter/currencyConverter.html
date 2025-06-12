@@ -1,0 +1,19 @@
+<template>
+  <lightning-card title="Currency Converter">
+    <div class="slds-p-around_medium">
+      <lightning-input label="Amount" type="number" value={amount} onchange={handleAmountChange}></lightning-input>
+      <lightning-input 
+        label="From Currency (e.g. EUR)" 
+        value="EUR" 
+        disabled></lightning-input>
+      <lightning-input label="To Currency (e.g. USD)" value={toCurrency} onchange={handleToChange}></lightning-input>
+      <lightning-button label="Convert" onclick={convertCurrency}></lightning-button>
+
+      <template if:true={convertedAmount}>
+        <p class="slds-m-top_medium">
+          Converted Amount: <strong>{convertedAmount} {lastCurrency}</strong>
+        </p>
+      </template>
+    </div>
+  </lightning-card>
+</template>
